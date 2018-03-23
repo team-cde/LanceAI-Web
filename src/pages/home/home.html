@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Posted Projects</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <img src="../../assets/imgs/ecommerce.jpg"/>
+          <ion-card-content>
+            <ion-card-title>
+              Shopping Website
+              </ion-card-title>
+            <p>
+              Website to enable customers to purchase our goods
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col (click)='openProject("mobile")'>
+        <ion-card *ngIf="this.addedProject">
+          <img src="../../assets/imgs/mobile_project.jpg"/>
+          <ion-card-content>
+            <ion-card-title>
+              Customer Rewards App
+              </ion-card-title>
+            <p>
+              Mobile application to give customers access to our rewards system
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

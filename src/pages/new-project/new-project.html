@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>New Project</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <h3>Project Information</h3>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-8>
+        <form (ngSubmit)="newProjectForm()">
+          <ion-item>
+            <ion-label>Project Title</ion-label>
+            <ion-input type="text" [(ngModel)]="newProject.title" name="title"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Description</ion-label>
+            <ion-textarea [(ngModel)]="newProject.description" name="description"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Type of Work</ion-label>
+            <ion-select [(ngModel)]="newProject.type" name="type">
+              <ion-option *ngFor="let type of work.types">{{type}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Required Skills</ion-label>
+            <ion-select [(ngModel)]="newProject.skills" name="skills" multiple>
+              <ion-option *ngFor="let skill of work.skills">{{skill}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Project Duration</ion-label>
+            <ion-select [(ngModel)]="newProject.duration" name="duration">
+              <ion-option *ngFor="let duration of work.durations">{{duration}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Time Commitment</ion-label>
+            <ion-select [(ngModel)]="newProject.time" name="time">
+              <ion-option *ngFor="let time of work.times">{{time}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label>Experience Required</ion-label>
+            <ion-select [(ngModel)]="newProject.level" name="level">
+              <ion-option *ngFor="let level of work.levels">{{level}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <button ion-button type="submit" block>Post Project</button>
+        </form>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
